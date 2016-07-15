@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
 
-[assembly: AssemblyProduct("ConfuserEx")]
-[assembly: AssemblyCompany("Ki")]
-[assembly: AssemblyCopyright("Copyright (C) Ki 2014")]
+[assembly: AssemblyProduct("ModPhuserEx")]
+[assembly: AssemblyCompany("IridiumIon Software")]
+[assembly: AssemblyCopyright("Copyright (C) 0xFireball 2016, Ki 2014")]
 
 #if DEBUG
 
