@@ -10,6 +10,7 @@ using Confuser.Core.Helpers;
 using Confuser.Core.Services;
 using dnlib.DotNet;
 using dnlib.DotNet.Emit;
+using Confuser.Runtime.Constants;
 
 namespace Confuser.Protections.Constants {
 	internal class EncodePhase : ProtectionPhase {
@@ -93,9 +94,9 @@ namespace Confuser.Protections.Constants {
 			var key = new uint[0x10];
 			uint state = keySeed;
 			for (int i = 0; i < 0x10; i++) {
-				state ^= state >> 12;
-				state ^= state << 25;
-				state ^= state >> 27;
+				state ^= state >> XorshiftConstants.XorshiftSeed1;
+				state ^= state << XorshiftConstants.XorshiftSeed2;
+				state ^= state >> XorshiftConstants.XorshiftSeed3;
 				key[i] = state;
 			}
 
