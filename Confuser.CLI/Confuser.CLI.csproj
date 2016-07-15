@@ -9,7 +9,7 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Confuser.CLI</RootNamespace>
-    <AssemblyName>Confuser.CLI</AssemblyName>
+    <AssemblyName>ModPhuserEx.CLI</AssemblyName>
     <TargetFrameworkVersion Condition=" !$(DefineConstants.Contains('NET45')) ">v4.0</TargetFrameworkVersion>
     <TargetFrameworkVersion Condition=" $(DefineConstants.Contains('NET45')) ">v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ConfuserEx</RootNamespace>
-    <AssemblyName>ConfuserEx</AssemblyName>
+    <AssemblyName>ModPhuserEx</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -211,6 +211,10 @@
     <ProjectReference Include="..\dnlib\src\dnlib.csproj">
       <Project>{FDFC1237-143F-4919-8318-4926901F4639}</Project>
       <Name>dnlib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ModPhuserEx.Protections\ModPhuserEx.Protections.csproj">
+      <Project>{eedcf727-c1c7-47a1-9f60-5d784bbe74c2}</Project>
+      <Name>ModPhuserEx.Protections</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

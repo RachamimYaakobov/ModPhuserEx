@@ -1,5 +1,5 @@
 ﻿using System;
 using System.Reflection;
 
-[assembly: AssemblyTitle("ConfuserEx Command-line")]
-[assembly: AssemblyDescription("Command-line interface of ConfuserEx")]
+[assembly: AssemblyTitle("ModPhuserEx Command-line")]
+[assembly: AssemblyDescription("Command-line interface of ModPhuserEx")]
