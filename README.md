@@ -1,7 +1,7 @@
-ConfuserEx
+ModPhuserEx
 ========
 ConfuserEx is a open-source protector for .NET applications.
-It is the successor of [Confuser](http://confuser.codeplex.com) project.
+It is a fork of the now discontinued [ConfuserEx](https://github.com/yck1509/ConfuserEx/) project.
 
 Features
 --------
@@ -28,7 +28,7 @@ The format of project file can be found in docs\ProjectFormat.md
 
 Bug Report
 ----------
-See the [Issues Report](http://yck1509.github.io/ConfuserEx/issues/) section of website.
+See the [Issues Report](issues/) section of project.
 
 
 License
@@ -37,5 +37,6 @@ See LICENSE file for details.
 
 Credits
 -------
+**[yck1509](https://github.com/yck1509)** for developing ConfuserEx!  
 **[0xd4d](https://github.com/0xd4d)** for his awesome work and extensive knowledge!  
 Members of **[Black Storm Forum](http://board.b-at-s.info/)** for their help!
