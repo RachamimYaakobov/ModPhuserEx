@@ -1,6 +1,6 @@
 ModPhuserEx
 ========
-ConfuserEx is a open-source protector for .NET applications.
+ModPhuserEx is a open-source protector for .NET applications.
 It is a fork of the now discontinued [ConfuserEx](https://github.com/yck1509/ConfuserEx/) project.
 
 Features
