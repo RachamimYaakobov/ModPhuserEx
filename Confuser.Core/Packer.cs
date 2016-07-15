@@ -9,7 +9,7 @@ namespace Confuser.Core {
 	///     Base class of Confuser packers.
 	/// </summary>
 	/// <remarks>
-	///     A parameterless constructor must exists in derived classes to enable plugin discovery.
+	///     A parameterless constructor must exist in derived classes to enable plugin discovery.
 	/// </remarks>
 	public abstract class Packer : ConfuserComponent {
 		/// <summary>
