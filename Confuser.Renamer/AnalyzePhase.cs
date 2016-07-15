@@ -152,7 +152,7 @@ namespace Confuser.Renamer {
 			else if (type.IsRuntimeSpecialName || type.IsGlobalModuleType) {
 				service.SetCanRename(type, false);
 			}
-			else if (type.FullName == "ConfusedByAttribute") {
+			else if (type.FullName == "ModPhusedByAttribute") {
 				// Courtesy
 				service.SetCanRename(type, false);
 			}

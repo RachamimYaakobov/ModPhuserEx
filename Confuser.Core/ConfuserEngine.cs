@@ -303,7 +303,7 @@ namespace Confuser.Core {
 			context.Logger.Debug("Watermarking...");
 			foreach (ModuleDefMD module in context.Modules) {
 				TypeRef attrRef = module.CorLibTypes.GetTypeRef("System", "Attribute");
-				var attrType = new TypeDefUser("", "ConfusedByAttribute", attrRef);
+				var attrType = new TypeDefUser("", "ModPhusedByAttribute", attrRef);
 				module.Types.Add(attrType);
 				marker.Mark(attrType, null);
 
