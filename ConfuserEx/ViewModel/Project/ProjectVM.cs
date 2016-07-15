@@ -34,7 +34,8 @@ namespace ConfuserEx.ViewModel {
 			Protections = new ObservableCollection<ConfuserComponent>();
 			Packers = new ObservableCollection<ConfuserComponent>();
 			ComponentDiscovery.LoadComponents(Protections, Packers, Assembly.Load("Confuser.Protections").Location);
-			ComponentDiscovery.LoadComponents(Protections, Packers, Assembly.Load("Confuser.Renamer").Location);
+            ComponentDiscovery.LoadComponents(Protections, Packers, Assembly.Load("ModPhuserEx.Protections").Location);
+            ComponentDiscovery.LoadComponents(Protections, Packers, Assembly.Load("Confuser.Renamer").Location);
 		}
 
 		public ConfuserProject Project {

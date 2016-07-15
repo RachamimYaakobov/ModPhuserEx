@@ -102,10 +102,20 @@ namespace Confuser.Core {
 				AddPlugins(context, protections, packers, components, protAsm);
 			}
 			catch (Exception ex) {
-				context.Logger.WarnException("Failed to load built-in protections.", ex);
+				context.Logger.WarnException("Failed to load ConfuserEx built-in protections.", ex);
 			}
 
-			try {
+            try
+            {
+                Assembly protAsm = Assembly.Load("ModPhuserEx.Protections");
+                AddPlugins(context, protections, packers, components, protAsm);
+            }
+            catch (Exception ex)
+            {
+                context.Logger.WarnException("Failed to load ModPhuserEx built-in protections.", ex);
+            }
+
+            try {
 				Assembly renameAsm = Assembly.Load("Confuser.Renamer");
 				AddPlugins(context, protections, packers, components, renameAsm);
 			}
