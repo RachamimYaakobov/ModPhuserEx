@@ -1,4 +1,12 @@
-﻿using System;
+﻿using Confuser.Core;
+using Confuser.Core.Helpers;
+using Confuser.Core.Services;
+using dnlib.DotNet;
+using dnlib.DotNet.Emit;
+using dnlib.DotNet.MD;
+using dnlib.DotNet.Writer;
+using dnlib.PE;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -6,15 +14,6 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
-using Confuser.Core;
-using Confuser.Core.Helpers;
-using Confuser.Core.Services;
-using Confuser.Protections.Compress;
-using dnlib.DotNet;
-using dnlib.DotNet.Emit;
-using dnlib.DotNet.MD;
-using dnlib.DotNet.Writer;
-using dnlib.PE;
 using FileAttributes = dnlib.DotNet.FileAttributes;
 using SR = System.Reflection;
 
@@ -47,7 +46,9 @@ namespace Confuser.Protections
             get { return _FullId; }
         }
 
-        protected override void Initialize(ConfuserContext context) { }
+        protected override void Initialize(ConfuserContext context)
+        {
+        }
 
         protected override void PopulatePipeline(ProtectionPipeline pipeline)
         {
@@ -105,7 +106,7 @@ namespace Confuser.Protections
             }
         }
 
-        static string GetId(byte[] module)
+        private static string GetId(byte[] module)
         {
             var md = MetaDataCreator.CreateMetaData(new PEImage(module));
             var assemblyRow = md.TablesStream.ReadAssemblyRow(1);
@@ -119,12 +120,12 @@ namespace Confuser.Protections
             return GetId(assembly);
         }
 
-        static string GetId(IAssembly assembly)
+        private static string GetId(IAssembly assembly)
         {
             return new SR.AssemblyName(assembly.FullName).FullName.ToUpperInvariant();
         }
 
-        void PackModules(ConfuserContext context, CompressorContext compCtx, ModuleDef stubModule, ICompressionService comp, RandomGenerator random)
+        private void PackModules(ConfuserContext context, CompressorContext compCtx, ModuleDef stubModule, ICompressionService comp, RandomGenerator random)
         {
             int maxLen = 0;
             var modules = new Dictionary<string, byte[]>();
@@ -169,7 +170,8 @@ namespace Confuser.Protections
                 uint state = 0x6fff61;
                 foreach (byte chr in name)
                     state = state * 0x5e3f1f + chr;
-                byte[] encrypted = compCtx.Encrypt(comp, entry.Value, state, progress => {
+                byte[] encrypted = compCtx.Encrypt(comp, entry.Value, state, progress =>
+                {
                     progress = (progress + moduleIndex) / modules.Count;
                     context.Logger.Progress((int)(progress * 10000), 10000);
                 });
@@ -182,7 +184,7 @@ namespace Confuser.Protections
             context.Logger.EndProgress();
         }
 
-        void InjectData(ModuleDef stubModule, MethodDef method, byte[] data)
+        private void InjectData(ModuleDef stubModule, MethodDef method, byte[] data)
         {
             var dataType = new TypeDefUser("", "DataType", stubModule.CorLibTypes.GetTypeRef("System", "ValueType"));
             dataType.Layout = TypeAttributes.ExplicitLayout;
@@ -200,7 +202,8 @@ namespace Confuser.Protections
             };
             stubModule.GlobalType.Fields.Add(dataField);
 
-            MutationHelper.ReplacePlaceholder(method, arg => {
+            MutationHelper.ReplacePlaceholder(method, arg =>
+            {
                 var repl = new List<Instruction>();
                 repl.AddRange(arg);
                 repl.Add(Instruction.Create(OpCodes.Dup));
@@ -211,7 +214,7 @@ namespace Confuser.Protections
             });
         }
 
-        void InjectStub(ConfuserContext context, CompressorContext compCtx, ProtectionParameters parameters, ModuleDef stubModule)
+        private void InjectStub(ConfuserContext context, CompressorContext compCtx, ProtectionParameters parameters, ModuleDef stubModule)
         {
             var rt = context.Registry.GetService<IRuntimeService>();
             RandomGenerator random = context.Registry.GetService<IRandomService>().GetRandomGenerator(Id);
@@ -225,9 +228,11 @@ namespace Confuser.Protections
                 case Mode.Normal:
                     compCtx.Deriver = new NormalDeriver();
                     break;
+
                 case Mode.Dynamic:
                     compCtx.Deriver = new DynamicDeriver();
                     break;
+
                 default:
                     throw new UnreachableException();
             }
@@ -306,7 +311,7 @@ namespace Confuser.Protections
             PackModules(context, compCtx, stubModule, comp, random);
         }
 
-        void ImportAssemblyTypeReferences(ModuleDef originModule, ModuleDef stubModule)
+        private void ImportAssemblyTypeReferences(ModuleDef originModule, ModuleDef stubModule)
         {
             var assembly = stubModule.Assembly;
             foreach (var ca in assembly.CustomAttributes)
@@ -321,9 +326,9 @@ namespace Confuser.Protections
             }
         }
 
-        class KeyInjector : IModuleWriterListener
+        private class KeyInjector : IModuleWriterListener
         {
-            readonly CompressorContext ctx;
+            private readonly CompressorContext ctx;
 
             public KeyInjector(CompressorContext ctx)
             {
