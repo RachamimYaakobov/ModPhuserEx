@@ -42,9 +42,9 @@
                     <Label>Developed by 0xFireball, based on ConfuserEx by Ki.</Label>
                     <Label>
                         <TextBlock>
-                            <Hyperlink NavigateUri="http://yck1509.github.io/ConfuserEx/"
+                            <Hyperlink NavigateUri="https://0xfireball.github.io/ModPhuserEx/"
                                        Command="{Binding LaunchBrowser}"
-                                       CommandParameter="http://yck1509.github.io/ConfuserEx/">
+                                       CommandParameter="https://0xfireball.github.io/ModPhuserEx/">
                                 Visit the project page for details.
                             </Hyperlink>
                         </TextBlock>
@@ -54,9 +54,9 @@
                     <Label>If you like it or find it useful,</Label>
                     <Label>
                         <TextBlock>
-                            <Hyperlink NavigateUri="http://yck1509.github.io/ConfuserEx/#donation"
+                            <Hyperlink NavigateUri="https://0xfireball.github.io/ModPhuserEx/#donate"
                                        Command="{Binding LaunchBrowser}"
-                                       CommandParameter="http://yck1509.github.io/ConfuserEx/#donation">
+                                       CommandParameter="https://0xfireball.github.io/ModPhuserEx/#donate">
                                 feel free to support the project by making a donation!
                             </Hyperlink>
                         </TextBlock>
