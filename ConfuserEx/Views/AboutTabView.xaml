@@ -25,7 +25,7 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Source="{Binding Icon}" Width="64" Height="64" />
-                <Label Grid.Row="0" Grid.Column="1" FontSize="20" Content="ConfuserEx" Foreground="#ffffff" />
+                <Label Grid.Row="0" Grid.Column="1" FontSize="20" Content="ModPhuserEx" Foreground="#ffffff" />
                 <TextBox Grid.Row="1" Grid.Column="1" FontSize="14" Text="{x:Static core:ConfuserEngine.Version}"
                          Foreground="#a0a0a0" BorderThickness="0" VerticalAlignment="Center" Background="Transparent"
                          IsReadOnly="True" IsReadOnlyCaretVisible="True" local:Skin.FocusOverlay="False" />
@@ -38,8 +38,8 @@
                 <Separator DockPanel.Dock="Bottom" />
 
                 <StackPanel TextBlock.FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Stretch">
-                    <Label FontWeight="Bold">ConfuserEx, a .NET protector</Label>
-                    <Label>Developed by Ki, open sourced under MIT license.</Label>
+                    <Label FontWeight="Bold">ModPhuserEx, a .NET protector forked from ConfuserEx</Label>
+                    <Label>Developed by 0xFireball, based on ConfuserEx by Ki.</Label>
                     <Label>
                         <TextBlock>
                             <Hyperlink NavigateUri="http://yck1509.github.io/ConfuserEx/"
@@ -64,19 +64,10 @@
                 </StackPanel>
             </DockPanel>
 
-            <Button Grid.Row="2" Grid.Column="0" Command="{Binding LaunchBrowser}"
-                    CommandParameter="http://board.b-at-s.info/" Focusable="False" Cursor="Hand">
-                <Button.Template>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <ContentPresenter />
-                    </ControlTemplate>
-                </Button.Template>
-                <Image Source="{DynamicResource TeamLogo}" Width="400" Height="100" />
-            </Button>
-
             <StackPanel Grid.Column="1" Grid.RowSpan="3" TextBlock.FontSize="13" Margin="10"
                         VerticalAlignment="Stretch" HorizontalAlignment="Center">
                 <Label HorizontalContentAlignment="Center">Special Thanks to:</Label>
+                <Label HorizontalContentAlignment="Center">yck1509</Label>
                 <Label HorizontalContentAlignment="Center">0xd4d</Label>
                 <Label HorizontalContentAlignment="Center">CodeCracker</Label>
                 <Label HorizontalContentAlignment="Center">JeRRy</Label>
