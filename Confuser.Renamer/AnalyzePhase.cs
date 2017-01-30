@@ -73,7 +73,8 @@ namespace Confuser.Renamer
                  caliburn = false,
                  winforms = false,
                  json = false,
-                 aspnetcore = false;
+                 aspnetcore = false,
+                 nancyfx = false;
 
             foreach (var module in context.Modules)
                 foreach (var asmRef in module.GetAssemblyRefs())
@@ -98,6 +99,10 @@ namespace Confuser.Renamer
                     else if (asmRef.Name.StartsWith("Microsoft.AspNetCore."))
                     {
                         aspnetcore = true;
+                    }
+                    else if (asmRef.Name == "Nancy")
+                    {
+                        nancyfx = true;
                     }
                 }
 
@@ -132,6 +137,13 @@ namespace Confuser.Renamer
                 var aspnetCoreAnalyzer = new AspNetCoreAnalyzer();
                 context.Logger.Debug("ASP.NET Core found, enabling compatibility.");
                 service.Renamers.Add(aspnetCoreAnalyzer);
+            }
+
+            if (nancyfx)
+            {
+                var nancyFxAnalyzer = new NancyFxAnalyzer();
+                context.Logger.Debug("NancyFx found, enabling compatibility.");
+                service.Renamers.Add(nancyFxAnalyzer);
             }
         }
 
