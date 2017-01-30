@@ -37,12 +37,18 @@ namespace Confuser.Renamer.Analyzers
 
         private void Analyze(ConfuserContext context, INameService service, TypeDef type, ProtectionParameters parameters)
         {
-            // todo
+            if (ShouldExclude(type, type))
+            {
+                service.SetCanRename(type, false);
+            }
         }
 
         private void Analyze(ConfuserContext context, INameService service, MethodDef method, ProtectionParameters parameters)
         {
-            //
+            if (ShouldExclude(method.DeclaringType, method))
+            {
+                service.SetCanRename(method, false);
+            }
         }
 
         private void Analyze(ConfuserContext context, INameService service, PropertyDef property, ProtectionParameters parameters)
