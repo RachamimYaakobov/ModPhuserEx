@@ -7,7 +7,7 @@ It is a fork of the now discontinued [ConfuserEx](https://github.com/yck1509/Con
 ## Features
 
 * Supports .NET Framework 2.0/3.0/3.5/4.0/4.5
-* (**NEW!**) Experimental support for .NET Core/ASP.NET Core
+* (**NEW!**) [Experimental support for .NET Core/ASP.NET Core](https://github.com/0xFireball/ModPhuserEx/wiki/Working-with-.NET-Core)
 * Symbol renaming (Support WPF/BAML, JSON.NET, ASP.NET Core, NancyFx)
 * Protection against debuggers/profilers
 * Protection against memory dumping
