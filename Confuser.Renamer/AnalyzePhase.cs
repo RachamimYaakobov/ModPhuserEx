@@ -222,6 +222,11 @@ namespace Confuser.Renamer
                     {
                         service.SetCanRename(method, false);
                     }
+                    // Also leave CONST fields alone
+                    foreach (var constField in type.Fields.Where(x => x.IsStatic && x.IsPublic))
+                    {
+                        service.SetCanRename(constField, false);
+                    }
                     // Remove attribute
                     type.CustomAttributes.Remove(obfuscationAttr);
                 }
