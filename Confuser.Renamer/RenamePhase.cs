@@ -73,6 +73,7 @@ namespace Confuser.Renamer {
 
 				if (def is TypeDef) {
 					var typeDef = (TypeDef)def;
+                    
 					if (parameters.GetParameter(context, def, "flatten", true)) {
 						typeDef.Name = service.ObfuscateName(typeDef.FullName, mode);
 						typeDef.Namespace = "";
