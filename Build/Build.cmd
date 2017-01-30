@@ -1,6 +1,6 @@
 @echo off
 
-%windir%\microsoft.net\framework\v4.0.30319\msbuild ..\Confuser2.sln /p:Configuration=Release "/p:Platform=Any CPU"
+%windir%\microsoft.net\framework\v4.0.30319\msbuild ..\ModPhuserEx.sln /p:Configuration=Release "/p:Platform=Any CPU"
 
 IF %ERRORLEVEL% NEQ 0 GOTO err
 
