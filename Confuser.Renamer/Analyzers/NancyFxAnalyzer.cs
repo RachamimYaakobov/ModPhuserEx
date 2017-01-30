@@ -11,12 +11,12 @@ namespace Confuser.Renamer.Analyzers
 
         private static bool ShouldExclude(TypeDef type, IDnlibDef def)
         {
-            if (type.BaseType?.Name == "NancyModule")
+            if (type.BaseType?.FullName == "Nancy.NancyModule")
             {
                 // Found a NancyFx Module
                 return true;
             }
-            if (type.BaseType?.Name == "DefaultNancyBootstrapper")
+            if (type.BaseType?.FullName == "Nancy.DefaultNancyBootstrapper")
             {
                 // Found a NancyFx Bootstrapper
                 return true;

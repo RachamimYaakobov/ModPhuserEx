@@ -20,6 +20,11 @@ namespace Confuser.Renamer.Analyzers
                     return true;
                 }
             }
+            if (type.BaseType?.FullName == "Microsoft.AspNetCore.Mvc.Controller")
+            {
+                // Found an AspNetCore MVC controller
+                return true;
+            }
             return false;
         }
 
