@@ -93,7 +93,7 @@ namespace Confuser.Protections
             stubModule.TablesHeaderVersion = originModule.TablesHeaderVersion;
             stubModule.Win32Resources = originModule.Win32Resources;
 
-            byte[] executableModuleBytes = 
+            byte[] executableModuleBytes = null; // TODO: LOL!
         }
 
         private static string GetId(byte[] module)
