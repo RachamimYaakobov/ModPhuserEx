@@ -99,8 +99,8 @@ namespace ConfuserEx.ViewModel
             {
                 var sfd = new VistaSaveFileDialog();
                 sfd.FileName = FileName;
-                sfd.Filter = "ConfuserEx Projects (*.crproj)|*.crproj|All Files (*.*)|*.*";
-                sfd.DefaultExt = ".crproj";
+                sfd.Filter = "ConfuserEx Projects (*.mpxproj)|*.mpxproj|All Files (*.*)|*.*";
+                sfd.DefaultExt = ".mpxproj";
                 sfd.AddExtension = true;
                 if (!(sfd.ShowDialog(Application.Current.MainWindow) ?? false) || sfd.FileName == null)
                     return false;
@@ -137,7 +137,7 @@ namespace ConfuserEx.ViewModel
                 return;
 
             Project = new ProjectVM(new ConfuserProject(), null);
-            FileName = "Unnamed.crproj";
+            FileName = "Unnamed.mpxproj";
         }
 
         private void OpenProj()

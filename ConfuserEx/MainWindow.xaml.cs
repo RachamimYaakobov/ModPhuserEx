@@ -15,7 +15,7 @@ namespace ConfuserEx {
 
 			var app = new AppVM();
 			app.Project = new ProjectVM(new ConfuserProject(), null);
-			app.FileName = "Unnamed.crproj";
+			app.FileName = "Unnamed.mpxproj";
 
 			app.Tabs.Add(new ProjectTabVM(app));
 			app.Tabs.Add(new SettingsTabVM(app));
