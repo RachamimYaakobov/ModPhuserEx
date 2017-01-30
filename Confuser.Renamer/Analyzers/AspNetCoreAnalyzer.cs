@@ -1,6 +1,6 @@
 ﻿using Confuser.Core;
 using dnlib.DotNet;
-using System.Collections.Generic;
+using System.Linq;
 
 namespace Confuser.Renamer.Analyzers
 {
@@ -12,6 +12,14 @@ namespace Confuser.Renamer.Analyzers
 
         private static bool ShouldExclude(TypeDef type, IDnlibDef def)
         {
+            foreach (var constructor in type.FindInstanceConstructors())
+            {
+                if (constructor.Parameters.Count > 1 && constructor.Parameters.Skip(1).First().Type.TypeName == "IHostingEnvironment")
+                {
+                    // Found the Startup class
+                    return true;
+                }
+            }
             return false;
         }
 
