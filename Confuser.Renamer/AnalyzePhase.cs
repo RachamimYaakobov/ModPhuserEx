@@ -2,6 +2,7 @@
 using Confuser.Renamer.Analyzers;
 using dnlib.DotNet;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Confuser.Renamer
 {
@@ -206,6 +207,24 @@ namespace Confuser.Renamer
             {
                 // Courtesy
                 service.SetCanRename(type, false);
+            }
+
+            if (type.CustomAttributes.Any(x => x.AttributeType.FullName == "System.Reflection.ObfuscationAttribute"))
+            {
+                var obfuscationAttr = type.CustomAttributes.First(x => x.AttributeType.FullName == "System.Reflection.ObfuscationAttribute");
+                var excludeParam = obfuscationAttr.NamedArguments.FirstOrDefault(x => x.Name == "Exclude");
+                if (excludeParam != null && ((bool)excludeParam.Value))
+                {
+                    // Obfuscation exclude, don't rename
+                    service.SetCanRename(type, false);
+                    // Also leave properties/methods alone
+                    foreach (var method in type.Methods)
+                    {
+                        service.SetCanRename(method, false);
+                    }
+                    // Remove attribute
+                    type.CustomAttributes.Remove(obfuscationAttr);
+                }
             }
 
             if (parameters.GetParameter(context, type, "forceRen", false))
