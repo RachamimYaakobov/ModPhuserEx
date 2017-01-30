@@ -37,6 +37,7 @@ See LICENSE file for details.
 
 Credits
 -------
+**[0xFireball](https://github.com/0xFireball)** for maintaining ModPhuserEx and improving on the awesome ConfuserEx!  
 **[yck1509](https://github.com/yck1509)** for developing ConfuserEx!  
 **[0xd4d](https://github.com/0xd4d)** for his awesome work and extensive knowledge!  
 Members of **[Black Storm Forum](http://board.b-at-s.info/)** for their help!
