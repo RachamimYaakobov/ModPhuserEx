@@ -1,0 +1,18 @@
+h1.header-title {
+    padding: 2%;
+    font-size: 5rem;
+}
+
+.header-actions {
+    margin-top: 2%;
+}
+
+.header-section {
+    margin-top: 8%;
+    margin-bottom: 12%;
+    text-align: center;
+}
+
+.download-title-text {
+    margin-bottom: 1%;
+}

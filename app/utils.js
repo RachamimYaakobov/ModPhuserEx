@@ -30,7 +30,7 @@ function getParameterByName (name, url) {
 
 // Display a message :D
 function displayMessage (messageName, messageValue, alertType) {
-  $('#intro').prepend(`<div class="alert alert-dismissible alert-{0}">
+  $('#message-target').prepend(`<div class="alert alert-dismissible alert-{0}">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         <h4>{1}</h4>
                         <p>{2}</p>
