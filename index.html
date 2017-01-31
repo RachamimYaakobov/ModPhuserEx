@@ -9,6 +9,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ModPhuserEx</title>
+  <!-- Preload -->
+  <link rel="stylesheet" href="app/preload.css" />
   <!-- Bootstrap -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/css/bootstrap-material-design.min.css" />
@@ -33,7 +35,17 @@
 </head>
 
 <body>
-  <div class="navbar avbar-default">
+  <div id="loader-wrapper">
+    <div id="loader">
+      <h1 class="loading-text">Loading</h1>
+      <div class="ball-pulse">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -153,6 +165,12 @@
   <script src='assets/js/filesaver.min.js'></script>
   <script src='app/utils.js'></script>
   <script src='app/app.js'></script>
+  <script>
+    setTimeout(function () {
+      $('body').toggleClass('loaded');
+      $('.header-title').hide();
+    }, 400);
+  </script>
 </body>
 
 </html>
