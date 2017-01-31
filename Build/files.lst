@@ -6,9 +6,9 @@
 ..\Release\bin\Confuser.Renamer.*
 ..\Release\bin\Confuser.Runtime.*
 ..\Release\bin\dnlib.*
-..\Release\bin\ConfuserEx.exe
-..\Release\bin\ConfuserEx.exe.config
-..\Release\bin\ConfuserEx.pdb
+..\Release\bin\ModPhuserEx.exe
+..\Release\bin\ModPhuserEx.exe.config
+..\Release\bin\ModPhuserEx.Protections.*
 ..\Release\bin\System.Threading.dll
 ..\Release\bin\GalaSoft.MvvmLight.Extras.WPF4.dll
 ..\Release\bin\GalaSoft.MvvmLight.WPF4.dll
