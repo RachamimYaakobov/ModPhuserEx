@@ -28,6 +28,17 @@ function getParameterByName (name, url) {
   return decodeURIComponent(results[2].replace(/\+/g, ' '))
 }
 
+// jQuery for page scrolling feature - requires jQuery Easing plugin
+$(function () {
+  $('a.page-scroll').bind('click', function (event) {
+      var $anchor = $(this)
+      $('html, body').stop().animate({
+          scrollTop: $($anchor.attr('href')).offset().top
+        }, 1500, 'easeInOutExpo')
+      event.preventDefault()
+    })
+})
+
 // Display a message :D
 function displayMessage (messageName, messageValue, alertType) {
   $('#message-target').prepend(`<div class="alert alert-dismissible alert-{0}">
