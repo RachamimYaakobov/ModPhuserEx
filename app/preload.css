@@ -155,7 +155,8 @@
 /* Loaded */
 
 .loaded #loader-wrapper {
-    color: transparent; /*hide text*/
+    color: transparent;
+    /*hide text*/
     transition: all 600ms ease-out;
     transition-property: opacity, z-index;
     /*visibility: hidden;*/
@@ -166,6 +167,13 @@
 
 .loading-text {
     color: #fefefe;
-    font-size: 6rem;
     padding-bottom: 15px;
+}
+
+.loading-title {
+    font-size: 6rem;
+}
+
+.loading-subtitle {
+    font-size: 3rem;
 }

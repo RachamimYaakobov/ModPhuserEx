@@ -37,7 +37,10 @@
 <body>
   <div id="loader-wrapper">
     <div id="loader">
-      <h1 class="loading-text">Loading</h1>
+      <div class="loading-text">
+        <h1 class="loading-title">ModPhuserEx</h1>
+        <h2 class="loading-subtitle">Loading</h2>
+      </div>
       <div class="ball-pulse">
         <div></div>
         <div></div>
@@ -168,8 +171,8 @@
   <script>
     setTimeout(function () {
       $('body').toggleClass('loaded');
-      $('.header-title').hide();
-    }, 400);
+      $('#loader').hide();
+    }, 150);
   </script>
 </body>
 
