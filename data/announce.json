@@ -1,0 +1,13 @@
+{
+    "danger": {
+        
+    },
+    "warning":{
+    },
+    "info":{
+        "Hello, and welcome!": "Thanks for using ModPhuserEx! We're planning to work on a bunch of new features soon, so expect bugs and please report them. Thanks again!"
+    },
+    "success":{
+        
+    }
+}

@@ -39,7 +39,7 @@ function displayMessage (messageName, messageValue, alertType) {
 
 // Pull messages from JSON file and display them
 function displayAnnouncements () {
-  $.getJSON('https://rawgit.com/CookieEaters/MarkTogether/master/data/announce.json', function (data) {
+  $.getJSON('data/announce.json', function (data) {
     let items = []
     $.each(data, function (alertType, alertsInCategory) {
       $.each(alertsInCategory, function (messageName, messageValue) {
