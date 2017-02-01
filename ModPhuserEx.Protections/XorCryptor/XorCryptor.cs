@@ -72,7 +72,7 @@ namespace Confuser.Protections
             if (ctx.CompatMode)
             {
                 var assembly = new AssemblyDefUser(originModule.Assembly);
-                assembly.Name += ".cr";
+                assembly.Name += ".mpx";
                 assembly.Modules.Add(stubModule);
             }
             else
