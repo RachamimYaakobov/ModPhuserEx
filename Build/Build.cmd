@@ -1,5 +1,8 @@
 @echo off
 
+echo "Updating Git version"
+./UpdateVersion.exe ..
+
 "C:\Program Files (x86)\MSBuild\14.0\Bin\MsBuild.exe" ..\ModPhuserEx.sln /p:Configuration=Release "/p:Platform=Any CPU"
 
 IF %ERRORLEVEL% NEQ 0 GOTO err
