@@ -1,5 +1,4 @@
-..\Release\bin\Confuser.CLI.exe
-..\Release\bin\Confuser.CLI.pdb
+..\Release\bin\ModPhuserEx.CLI.exe
 ..\Release\bin\Confuser.Core.*
 ..\Release\bin\Confuser.DynCipher.*
 ..\Release\bin\Confuser.Protections.*
